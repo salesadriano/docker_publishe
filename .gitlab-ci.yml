@@ -6,7 +6,7 @@ build:
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - docker build --pull -t "$CI_REGISTRY_PATH/docker" .
+    - docker build -t "$CI_REGISTRY_PATH/docker" .
     - docker push "$CI_REGISTRY_PATH/docke"
   only:
    - teste
