@@ -1,4 +1,6 @@
-image: salesadriano/docker_publisher
+
+build:
+  image: salesadriano/docker_publisher
   stage: build
   services:
     - docker:dind
