@@ -10,7 +10,7 @@ build:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
     ls
-    #- docker build -t "$CI_REGISTRY_PATH/docker" .
+    - docker build -t ad .
     #- docker push "$CI_REGISTRY_PATH/docker"
   only:
    - teste
