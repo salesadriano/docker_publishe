@@ -1,12 +1,11 @@
-image: docker:20.10
-stage: build
-services:
-  - docker:dind
-before_script:
-  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-script:
-  - docker ps
-  #- docker push "$CI_REGISTRY_PATH/docker"
-only:
- - teste
-
+. . .
+publish:
+  image: docker:latest
+  stage: publish
+  services:
+    - docker:dind
+  script:
+    - docker ps
+    #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    #- docker push $TAG_COMMIT
+    #- docker push $TAG_LATEST
