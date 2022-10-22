@@ -2,7 +2,7 @@ stages:
   - build
 
 build:
-  image: docker:22.06-rc
+  image: docker:20.10
   stage: build
   services:
     - docker:dind
@@ -10,11 +10,8 @@ build:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
     - ls
-    - docker build -t ad .
+    - docker ps
     #- docker push "$CI_REGISTRY_PATH/docker"
   only:
    - teste
 
-
-stages:          # List of stages for jobs, and their order of execution
-  - build
