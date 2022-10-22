@@ -1,13 +1,17 @@
+stages:
+  - build
+
 build:
-  image: salesadriano/docker_publisher
+  image: docker:22.06-rc
   stage: build
   services:
     - docker:dind
   before_script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
   script:
-    - docker build -t "$CI_REGISTRY_PATH/docker" .
-    - docker push "$CI_REGISTRY_PATH/docke"
+    - ls
+    - docker build -t ad .
+    #- docker push "$CI_REGISTRY_PATH/docker"
   only:
    - teste
 
