@@ -2,7 +2,7 @@ stages:
   - build
 
 build:
-  image: docker:latest
+  image: docker:22.06-rc
   stage: build
   services:
     - docker:dind
