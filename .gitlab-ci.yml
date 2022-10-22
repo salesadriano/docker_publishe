@@ -1,16 +1,12 @@
-stages:
-  - build
-
-build:
-  image: docker:20.10
-  stage: build
-  services:
-    - docker:dind
-  before_script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-  script:
-    - docker ps
-    #- docker push "$CI_REGISTRY_PATH/docker"
-  only:
-   - teste
+image: docker:20.10
+stage: build
+services:
+  - docker:dind
+before_script:
+  - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+script:
+  - docker ps
+  #- docker push "$CI_REGISTRY_PATH/docker"
+only:
+ - teste
 
