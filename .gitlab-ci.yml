@@ -1,4 +1,3 @@
-. . .
 publish:
   image: docker:latest
   stage: publish
