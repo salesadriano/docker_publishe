@@ -4,7 +4,7 @@ publish:
   services:
     - docker:dind
   script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker ps
-    #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     #- docker push $TAG_COMMIT
     #- docker push $TAG_LATEST
