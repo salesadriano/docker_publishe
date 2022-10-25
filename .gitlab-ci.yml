@@ -5,6 +5,7 @@ publish:
     - docker:dind
   before_script: 
       - /start.sh
+      - sllep 30
   script:
     #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - git status
