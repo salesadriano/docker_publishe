@@ -7,6 +7,6 @@ publish:
       - /start.sh
   script:
     #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - docker ps
+    - dockerd
     #- docker push $TAG_COMMIT
     #- docker push $TAG_LATEST
