@@ -5,9 +5,9 @@ publish:
     - docker:dind
   before_script: 
       - /start.sh
-      - sleep 20
   script:
     #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - git status
     - docker build . -t testes --pull
     #- docker push $TAG_COMMIT
     #- docker push $TAG_LATEST
