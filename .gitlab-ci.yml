@@ -3,8 +3,6 @@ publish:
   stage: build
   services:
     - docker:dind
-  before_script: 
-      - dockerd
   script:
     #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker ps
