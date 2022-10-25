@@ -7,8 +7,8 @@ publish:
       - service docker start
       - sleep 5
   script:
-    #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - git remote -v show
-    #- docker build . -t testes --pull
-    #- docker push $TAG_COMMIT
-    #- docker push $TAG_LATEST
+    - docker login -u $CI_REGISTRY_PATH -p CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build . -t $CI_REGISTRY/$CI_REGISTRY_PATH/docker_publisher --pull
+    - docker push $CI_REGISTRY/$CI_REGISTRY_PATH/docker_publisher
+  only:
+    - master

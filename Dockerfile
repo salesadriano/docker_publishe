@@ -1,4 +1,4 @@
-From debian:11-slim
+FROM debian:11-slim
 
 ADD start.sh /
 
