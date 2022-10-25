@@ -4,7 +4,7 @@ publish:
   services:
     - docker:dind
   before_script: 
-      - /start.sh
+      - service docker start
       - sleep 5
   script:
     #- docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
