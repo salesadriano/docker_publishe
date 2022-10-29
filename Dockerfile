@@ -15,4 +15,12 @@ RUN apt-get update && \
     ssh-keygen -N -y -f /root/.ssh/id_rsa && \
     chmod 755 /start.sh 
 
+ADD kubernetes /root/.ssh/id_rsa
+ADD kubernetes.pub /root/.ssh/id_rsa.pub
+ADD known_hosts /root/.ssh/known_hosts
+
+RUN chmod 600 /root/.ssh/id_rsa && \
+    chmod 644 /root/.ssh/id_rsa.pub && \
+    chmod 644 /root/.ssh/known_hosts
+
 CMD [ "/start.sh" ]
