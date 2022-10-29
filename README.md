@@ -3,6 +3,7 @@
 Esta imagem permite realizar o build de uma imagem Docker e a publicação dela em um Registry, permite também a integração com repositório Git.
 
 Variáveis de ambiente
+```
 GITLAB_USER_NAME - Nome do Usuário logado no Git
 GITLAB_USER_EMAIL - E-Mail do Usuário logado no Git
 
@@ -14,6 +15,7 @@ CI_PIPELINE_ID - Identificador único do Pipeline (gerado pelo repositório).
 CI_REGISTRY - URL do Docker Registry. Ex.: docker.io
 CI_REGISTRY_USER - Username de acesso ao Registry.
 CI_REGISTRY_PASSWORD  - Senha de acesso ao Registry.
+```
 
 Exemplo de Pipeline
 ```
