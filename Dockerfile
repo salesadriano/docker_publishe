@@ -18,9 +18,11 @@ RUN apt-get update && \
 ADD kubernetes /root/.ssh/id_rsa
 ADD kubernetes.pub /root/.ssh/id_rsa.pub
 ADD known_hosts /root/.ssh/known_hosts
+ADD publicar.sh /publicar.sh
 
 RUN chmod 600 /root/.ssh/id_rsa && \
     chmod 644 /root/.ssh/id_rsa.pub && \
-    chmod 644 /root/.ssh/known_hosts
+    chmod 644 /root/.ssh/known_hosts && \
+    chmod 755 /publicar.sh
 
 CMD [ "/start.sh" ]
